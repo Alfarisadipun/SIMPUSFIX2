@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran Puskesmas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Ikon Fontawesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="sidebars.css">
+    <style>
+        /* Custom styles for the dashboard */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        #wrapper {
+            display: flex;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        #sidebar-wrapper {
+            min-height: 100vh;
+            margin-left: -15rem;
+            transition: margin .25s ease-out;
+        }
+
+        #sidebar-wrapper .sidebar-heading {
+            padding: 0.875rem 1.25rem;
+            font-size: 1.2rem;
+        }
+
+        #sidebar-wrapper .list-group {
+            width: 15rem;
+        }
+
+        #page-content-wrapper {
+            width: 100%;
+            overflow-y: auto;
+        }
+
+        #wrapper.toggled #sidebar-wrapper {
+            margin-left: 0;
+        }
+
+        .navbar {
+            padding: 0.75rem 1rem;
+        }
+
+        .container-fluid {
+            margin-top: 50px;
+        }
+
+        /* Custom CSS for the sidebar */
+        #sidebar-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+        }
+        .profile-icon {
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+        .profile-icon img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .sidebar-heading {
+            text-align: center;
+            font-size: 1.5rem;
+            padding: 20px 0;
+            background-color: #218838;
+        }
+        .list-group-item:hover {
+            transform: translateX(10px);
+        }
+         .list-group-item {
+            border: none;
+            transition: all 0.3s ease-in-out;
+        }
+         /* Style for the toggle button */
+         #menu-toggle {
+            background-color: #218838;
+            border: none;
+        }
+
+        #menu-toggle:hover {
+            background-color: #1e7e34;
+        }
+
+        /* Center the form */
+        .center-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 56px); /* Subtract navbar height */
+        }
+        .card {
+            width: 100%;
+            max-width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="d-flex" id="wrapper">
+        <div class="bg-dark border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading text-white">Sistem Informasi Puskesmas</div>
+            <div class="list-group list-group-flush flex-grow-1">
+                <a href="index.html" class="list-group-item list-group-item-action bg-dark text-white"><i class="fa-solid fa-gauge"></i>     Dashboard</a>
+                <a href="loket.html" class="list-group-item list-group-item-action bg-dark text-white"><i class="fa-solid fa-cash-register"></i>     Loket</a>
+                <a href="#adminSubmenu" class="list-group-item list-group-item-action bg-dark text-white dropdown-toggle" data-toggle="collapse"><i class="fa-solid fa-user-nurse"></i> Poli</a>
+                <div class="collapse" id="adminSubmenu">
+                    <a href="poli-umum.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Poli Umum</a>
+                    <a href="poli-kandungan.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Poli Kandungan</a>
+                    <a href="poli-anak.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Poli Anak</a>
+                    <a href="poli-tht.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Poli THT</a>
+                    <a href="poli-gigi.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Poli Gigi</a>
+                    <a href="poli-penyakitdalam.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Poli Penyakit Dalam</a>
+                </div>
+                <a href="#pegawaiSubmenu" class="list-group-item list-group-item-action bg-dark text-white dropdown-toggle" data-toggle="collapse"><i class="fa-solid fa-user"></i>     Data Pegawai</a>
+                <div class="collapse" id="pegawaiSubmenu">
+                    <a href="data-perawat.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Data Perawat</a>
+                    <a href="data-bidan.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Data Bidan</a>
+                    <a href="data-dokter.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Data Dokter</a>
+                </div>             
+                <a href="#masterSubmenu" class="list-group-item list-group-item-action bg-dark text-white dropdown-toggle" data-toggle="collapse"><i class="fa-solid fa-user"></i>     Master</a>
+                <div class="collapse" id="masterSubmenu">
+                    <a href="master-pasien.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Data Pasien</a>
+                    <a href="master-dokter.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Data Dokter</a>
+                    <a href="master-obat.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Data Obat</a>
+                    <a href="master-poli.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Data Poliklinik</a>
+                </div>
+                <a href="apotik.html" class="list-group-item list-group-item-action bg-dark text-white"><i class="fa-solid fa-pump-medical"></i>     Apotik</a>
+                <a href="rekamedis.html" class="list-group-item list-group-item-action bg-dark text-white"><i class="fa-solid fa-pump-medical"></i>     Rekam Medis</a>
+                <a href="laporan.html" class="list-group-item list-group-item-action bg-dark text-white"><i class="fa-solid fa-circle-exclamation"></i>     Laporan</a>
+            </div>
+            <!-- Profile Icon -->
+            <div class="profile-icon">
+                <img src="logopuskes.png" alt="Profile Picture">
+            </div>
+        </div>
+    
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <button class="btn btn-primary" id="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="landing.html"><i class="fa-solid fa-sign-out-alt"></i> Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+           
+            <div class="container-fluid">
+                <h1 class="mt-4 text-center">Pembayaran</h1>
+
+                <div class="center-form">
+                    <div class="card">
+                        <div class="card-header">
+                            Detail Pembayaran
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="namaPasien">Nama Pasien</label>
+                                    <input type="text" class="form-control" id="namaPasien" placeholder="Masukkan nama pasien">
+                                </div>
+                                <div class="form-group">
+                                    <label for="layanan">Layanan</label>
+                                    <input type="text" class="form-control" id="layanan" placeholder="Masukkan layanan">
+                                </div>
+                                <div class="form-group">
+                                    <label for="biaya">Biaya</label>
+                                    <input type="text" class="form-control" id="biaya" placeholder="Masukkan biaya">
+                                </div>
+                                <div class="form-group">
+                                    <label for="metodePembayaran">Metode Pembayaran</label>
+                                    <input type="text" class="form-control" id="metodePembayaran" placeholder="Masukkan metode pembayaran">
+                                </div>
+                                <div class="form-group">
+                                    <label for="kategoriPembayaran">Kategori</label>
+                                    <select class="form-control" id="kategoriPembayaran">
+                                        <option value="1">--Pilih Kategori--</option>
+                                        <option>BPJS</option>
+                                        <option>UMUM</option>
+                                    </select>
+                                </div>
+                               
+                                <div id="uploadFotoBPJS" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="fotoBPJS">Upload Foto BPJS</label>
+                                        <input type="file" class="form-control-file" id="fotoBPJS">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Bayar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap and JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="sidebars.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#kategoriPembayaran').change(function() {
+                if ($(this).val() === 'BPJS') {
+                    $('#uploadFotoBPJS').show();
+                } else {
+                    $('#uploadFotoBPJS').hide();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

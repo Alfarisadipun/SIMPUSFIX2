@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Informasi Rekam Medis</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Ikon Fontawesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="sidebars.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        a {
+        color: #000; 
+        text-decoration: none; 
+        }
+
+        a:hover {
+        color: #000; 
+        text-decoration: none; 
+        }
+
+        #wrapper {
+            display: flex;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        #sidebar-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+            background-color: #28a745;
+            color: white;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .profile-icon {
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+
+        .profile-icon img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .sidebar-heading {
+            text-align: center;
+            font-size: 1.5rem;
+            padding: 20px 0;
+            background-color: #218838;
+        }
+
+        
+
+        .list-group-item:hover {
+            background-color: #218838;
+            transform: translateX(10px);
+        }
+
+        .list-group-item-action:active {
+            background-color: #1e7e34;
+            transform: scale(0.98);
+        }
+
+       
+
+        .profile-icon {
+            border-top: 1px solid #218838;
+        }
+
+        #menu-toggle {
+            background-color: #218838;
+            border: none;
+        }
+
+        #menu-toggle:hover {
+            background-color: #1e7e34;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="d-flex" id="wrapper">
+        <div class="bg-dark border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading text-white">Sistem Informasi Puskesmas</div>
+            <div class="list-group list-group-flush flex-grow-1">
+                <a href="index.html" class="list-group-item list-group-item-action bg-dark text-white"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+                <a href="loket.html" class="list-group-item list-group-item-action bg-dark text-white"><i class="fa-solid fa-cash-register"></i> Loket</a>
+                <a href="#adminSubmenu" class="list-group-item list-group-item-action bg-dark text-white dropdown-toggle" data-toggle="collapse"><i class="fa-solid fa-user-nurse"></i> Admin</a>
+                <div class="collapse" id="adminSubmenu">
+                    <a href="admin-umum.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Poli Umum</a>
+                    <a href="admin-kandungan.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Poli Kandungan</a>
+                    <a href="admin-anak.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Poli Anak</a>
+                    <a href="admin-tht.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Poli THT</a>
+                    <a href="admin-gigi.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Poli Gigi</a>
+                    <a href="admin-penyakitdalam.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Poli Penyakit Dalam</a>
+                </div>
+                <a href="#pegawaiSubmenu" class="list-group-item list-group-item-action bg-dark text-white dropdown-toggle" data-toggle="collapse"><i class="fa-solid fa-user"></i>     Data Pegawai</a>
+                <div class="collapse" id="pegawaiSubmenu">
+                    <a href="data-perawat.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Data Perawat</a>
+                    <a href="data-bidan.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Data Bidan</a>
+                    <a href="data-dokter.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Data Dokter</a>
+                </div>  
+                <a href="#masterSubmenu" class="list-group-item list-group-item-action bg-dark text-white dropdown-toggle" data-toggle="collapse"><i class="fa-solid fa-user"></i> Master</a>
+                <div class="collapse" id="masterSubmenu">
+                    <a href="master-pasien.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Data Pasien</a>
+                    <a href="master-dokter.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Data Dokter</a>
+                    <a href="master-obat.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Data Obat</a>
+                    <a href="master-poli.html" class="list-group-item list-group-item-action bg-dark text-white pl-5">Data Poliklinik</a>
+                </div>
+                <a href="rekamedis.html" class="list-group-item list-group-item-action bg-dark text-white"><i class="fa-solid fa-pump-medical"></i> Rekam Medis</a>
+                <a href="laporan.html" class="list-group-item list-group-item-action bg-dark text-white"><i class="fa-solid fa-circle-exclamation"></i> Laporan</a>
+            </div>
+            <div class="profile-icon">
+                <img src="logopuskes.png" alt="Profile Picture">
+            </div>
+        </div>
+
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <button class="btn btn-primary" id="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="landing.html"><i class="fa-solid fa-sign-out-alt"></i> Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Bagian Konten -->
+             <a href="rekamedis.html">kembali</a>
+             <hr>
+             <hr>
+             <h2>Poli Gigi</h2>
+             <hr>
+             <hr>
+             <!-- Tabel Pasien -->
+             <div class="table-responsive">
+                <table class="table table-bordered" id="patientsTable">
+                    <thead>
+                        <tr bgcolor="#D5ED9F">
+                            <th>No</th>
+                            <th>ID Pasien</th>
+                            <th>Tanggal Periksa</th>
+                            <th>Nama Pasien</th>
+                            <th>Keluhan</th>
+                            <th>Diagnosa</th>
+                            <th>Nama Obat</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Contoh data pasien -->
+                        <tr>
+                            <td>1</td>
+                            <td>PKMCK-16323082</td>
+                            <td>2022-03-03</td>
+                            <td style="cursor: pointer;"><a href="rekamedis-gigi-cinta.html">Cinta</a></td>
+                            <td>Gigi Berlubang</td>
+                            <td>Sakit Gigi</td>
+                            <td>Antibiotik <br>Ibuprofen</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm edit-btn" data-toggle="modal" data-target="#tambahPasienModal"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-danger btn-sm delete-btn"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>PKMCK-16323079</td>
+                            <td>2022-01-02</td>
+                            <td style="cursor: pointer;"><a href="rekamedis-gigi-aldo.html">Aldo</a></td>
+                            <td>Gigi Berlubang</td>
+                            <td>Sakit Gigi</td>
+                            <td>Antibiotik <br>Ibuprofen</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm edit-btn" data-toggle="modal" data-target="#tambahPasienModal"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-danger btn-sm delete-btn"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>PKMCK-16323081</td>
+                            <td>2022-03-09</td>
+                            <td style="cursor: pointer;"><a href="rekamedis-gigi-dika.html">Dika</a</td>
+                                <td>Gigi Berlubang</td>
+                                <td>Sakit Gigi</td>
+                                <td>Antibiotik <br>Ibuprofen</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm edit-btn" data-toggle="modal" data-target="#tambahPasienModal"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-danger btn-sm delete-btn"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>PKMCK-1632390</td>
+                            <td>2022-09-05</td>
+                            <td style="cursor: pointer;"><a href="rekamedis-gigi-viva.html">Viva</a></td>
+                            <td>Gigi Berlubang</td>
+                            <td>Sakit Gigi</td>
+                            <td>Antibiotik <br>Ibuprofen</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm edit-btn" data-toggle="modal" data-target="#tambahPasienModal"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-danger btn-sm delete-btn"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>PKMCK-16323071</td>
+                            <td>2022-06-15</td>
+                            <td style="cursor: pointer;"><a href="rekamedis-gigi-vero.html">Vero</a></td>
+                            <td>Gigi Berlubang</td>
+                            <td>Sakit Gigi</td>
+                            <td>Antibiotik <br>Ibuprofen</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm edit-btn" data-toggle="modal" data-target="#tambahPasienModal"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-danger btn-sm delete-btn"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom Script -->
+    <script>
+        // Toggle Sidebar
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+
+        // Menampilkan data pasien pada modal detail pasien
+        $(".patient-name").click(function() {
+            var row = $(this).closest("tr");
+            $("#detailNama").text(row.find("td:eq(3)").text());
+            $("#detailID").text(row.find("td:eq(1)").text());
+            $("#detailKeluhan").text(row.find("td:eq(4)").text());
+            $("#detailDiagnosa").text(row.find("td:eq(6)").text());
+        });
+
+        // Edit data pasien
+        $(".edit-btn").click(function() {
+            var row = $(this).closest("tr");
+            $("#tambahPasienModalLabel").text("Edit Rekam Medis");
+            $("#idPasien").val(row.find("td:eq(1)").text());
+            $("#tanggalPeriksa").val(row.find("td:eq(2)").text());
+            $("#namaPasien").val(row.find("td:eq(3)").text());
+            $("#keluhan").val(row.find("td:eq(4)").text());
+            $("#diagnosa").val(row.find("td:eq(6)").text());
+            $("#namaObat").val(row.find("td:eq(7)").text());
+        });
+
+        // Simpan data pasien
+        $("#saveBtn").click(function() {
+            // Lakukan aksi penyimpanan di sini
+            alert("Data pasien berhasil disimpan!");
+            $('#tambahPasienModal').modal('hide');
+        });
+
+        // Hapus data pasien
+        $(".delete-btn").click(function() {
+            if (confirm("Apakah Anda yakin ingin menghapus data ini?")) {
+                $(this).closest("tr").remove();
+                alert("Data pasien berhasil dihapus!");
+            }
+        });
+    </script>
+</body>
+</html>
+
+           </body>
+</html>

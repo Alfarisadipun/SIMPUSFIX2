@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ikon Fontawesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <title>Detail Perawat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            display: flex;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .left-column {
+            flex: 2;
+        }
+
+        .right-column {
+            flex: 1;
+            text-align: center;
+        }
+
+        .right-column img {
+            width: 100%; 
+            max-width: 200px; 
+            margin-top: 10px;
+            height: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .history {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+
+        .history table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .history th, .history td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .back-link {
+            display: block;
+            margin-bottom: 20px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #050505;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="data-dokter.html" class="back-link">Kembali</a>
+
+    <div class="container">
+        <div class="left-column">
+            <table>
+                <tr>
+                    <th colspan="2">Detail Dokter</th>
+                </tr>
+                <tr>
+                    <td>Nama Lengkap:</td>
+                    <td>Jurniati Akatian</td>
+                </tr>
+                <tr>
+                    <td>Umur:</td>
+                    <td>21 Tahun</td>
+                </tr>
+                <tr>
+                    <td>Pendidikan Terakhir:</td>
+                    <td>S1 Kedokteran</td>
+                </tr>
+                <tr>
+                    <td>Status Kepegawaian:</td>
+                    <td>honorer</td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin:</td>
+                    <td>Perempuan</td>
+                </tr>
+                <tr>
+                    <td>Tanggal Bergabung:</td>
+                    <td>10 November 2002</td>
+                </tr>
+                <tr>
+                    <td>Alamat:</td>
+                    <td>Jl. Anggrek</td>
+                </tr>
+            </table>
+        </div>
+        <div class="right-column">
+            <img src="jurnii.jpg" alt="Foto Anggota">
+        </div>
+    </div>
+    <div class="history">
+        <h3>Riwayat Pengalaman Kerja</h3>
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Nama Institusi</th>
+                <th>Prestasti / Capaian</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Puskesmas Werba</td>
+                <td>Menerima Penghargaan dokter Terbaik Di puskesmas Werba</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Puskesmas Sebrang</td>
+                <td>Serifikat Sebagai puskesmas Terbaik</td>
+            </tr>
+        </table>
+    </div>
+    
+
+</body>
+
+</html>
